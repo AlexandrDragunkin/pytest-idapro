@@ -31,27 +31,15 @@ Record and Replay
 Fixtures
 --------
 
-Pytest `Fixtures <https://docs.pytest.org/en/latest/fixture.html>`_ are
-exteremly powerful when writing tests, and pytest-idapro currently comes with
-two helpful fixtures:
+Pytest `Fixtures <https://docs.pytest.org/en/latest/fixture.html>`_ являются чрезвычайно мощными при написании тестов, и pytest-idapro в настоящее время поставляется с двумя полезными приспособлениями:
 
-1. `idapro_plugin_entry` - pytest-idapro will automatically identify all
-   ida plugin entry points (functions named :code:`PLUGIN_ENTRY`) across your
-   code base and let you easily writing tests for all plugin objects defined.
-2. `idapro_action_entry` - pytest-idapro will automatically identify all
-   ida actions (objects inheriting the :code:`action_handler_t` class)
-   throughout your code and again, let you easily write tests for all of your
-   actions.
+1.  `idapro_plugin_entry` - pytest-idapro автоматически идентифицирует все точки входа плагина ida (функции с именем ' PLUGIN_ENTRY`) в вашей базе кода и позволит вам легко писать тесты для всех определенных объектов плагина.
+1.  `idapro_action_entry` - pytest-idapro автоматически идентифицирует все действия ida (объекты, наследующие класс `action_handler_t`) во всем коде и позволяет легко писать тесты для всех ваших действий.
 
-Peeking Under the Hood
+Под капотом
 ======================
 
-By providing the :code:`--ida` flag ipytest-idapro will run a worker pytest
-instance inside IDA which will execute all tests, collect results and
-communicate with the main pytest process (this behavior is somewhat similar to
-the pytest-xdist plugin). By defualt IDA will open a temporary empty database
-file unless  the :code:`--ida-file` flag is used to specify IDB or binary file
-for IDA to analyze before running any tests.
+Предоставляя флаг `--ida`, ipytest-idapro будет запускать рабочий экземпляр pytest внутри IDA, который будет выполнять все тесты, собирать результаты и связываться с основным процессом pytest (это поведение несколько похоже на плагин pytest-xdist). По умолчанию IDA откроет временный пустой файл базы данных, если только флаг `--ida-file` не используется для указания IDB или двоичного файла, который IDA будет анализировать перед выполнением каких-либо тестов.
 
 Recording
 ---------
