@@ -21,17 +21,12 @@ Basic usage
 ```console
    $ pytest --ida <PATH TO IDA EXEUTABLE> --ida-file <PATH TO IDB OR SUPPORTED FILE> ;
 ```
-Running the above command will run all tests detected by pytest in the current directory inside an IDA instance with a given IDA supported file (IDB, EXE, SO, etc).
+Выполнение приведенной выше команды запустит все тесты, обнаруженные pytest в текущем каталоге внутри экземпляра IDA с заданным файлом, поддерживаемым IDA (IDB, EXE, SO и т. д.).
 
 Record and Replay
 -----------------
 
-Since version 0.3.5, pytest-idapro has shifted from a mock-up focus to
-record-and-replay focus by providing two new command line flags;
-:code:`--ida-record` will record all IDAPython API calls and IDA's behavior
-while running tests into specified json file. Using :code:`--ida-replay` and a
-json recording file, pytest-idapro is then able to replay the IDA environment
-and IDAPython API behavior without an IDA executable or the :code:`--ida` flag.
+Начиная с версии 0.3.5, pytest-idapro переключился с фокуса макета на фокус записи и воспроизведения, предоставив два новых флага командной строки; `--ida-record` будет записывать все вызовы API IDAPython и поведение IDA при выполнении тестов в указанный файл json. Используя `--ida-replay` и файл записи json, pytest-idapro может затем воспроизвести среду IDA и поведение API IDAPython без исполняемого файла IDA или флага --ida.
 
 Fixtures
 --------
@@ -40,10 +35,10 @@ Pytest `Fixtures <https://docs.pytest.org/en/latest/fixture.html>`_ are
 exteremly powerful when writing tests, and pytest-idapro currently comes with
 two helpful fixtures:
 
-1. :code:`idapro_plugin_entry` - pytest-idapro will automatically identify all
+1. `idapro_plugin_entry` - pytest-idapro will automatically identify all
    ida plugin entry points (functions named :code:`PLUGIN_ENTRY`) across your
    code base and let you easily writing tests for all plugin objects defined.
-2. :code:`idapro_action_entry` - pytest-idapro will automatically identify all
+2. `idapro_action_entry` - pytest-idapro will automatically identify all
    ida actions (objects inheriting the :code:`action_handler_t` class)
    throughout your code and again, let you easily write tests for all of your
    actions.
